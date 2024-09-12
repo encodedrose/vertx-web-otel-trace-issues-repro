@@ -33,7 +33,7 @@ public class MainVerticle extends AbstractVerticle {
 
     Router mainRouter = Router.router(vertx);
     mainRouter.route("/productsAPI/*").handler(k -> {
-      System.out.println("Outter Handler");
+      // some logic (e.g. auth check) before passing the request to the subrouter
       k.next();
     });
     mainRouter.route("/productsAPI/*")
